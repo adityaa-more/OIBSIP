@@ -1,0 +1,23 @@
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    width: 98%;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    align-items: center;
+  }
+
+  .wrapper h1 {
+    margin: 10px 5px;
+    font-size: 25px;
+  }
+
+  .main-container {
+    width: 98%;
+    flex-direction: column;
+  }
+
+  .container-box {
+    width: 98%;
+  }
+}

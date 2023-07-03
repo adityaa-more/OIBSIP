@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-neutral-50 font-mono m-0 p-0 box-border">
+    <div class="wrapper flex flex-col items-center w-[950px] mt-12 mx-auto mb-0">
+        <h1 class="my-6 mx-3 text-center uppercase italic text-5xl font-bold">Temperature Converter</h1>
+        <div class="main-container flex w-[98%]">
+            <div class="container-box w-[50%] p-2 m-1 bg-sky-500 rounded-xl shadow-md">
+                <div
+                    class="input-field flex justify-around justify-items-center w-[100%] my-1 mx-auto relative py-3 border-b-2">
+                    <div class="text-xl leading-10 min-w-[60px]">
+                        <label for="fromUnit">From:</label>
+                    </div>
+                    <select name="units" id="fromUnit"
+                        class="float-right h-9 min-w-[100px] text-center rounded-md font-bold shadow-sm">
+                        <option value="Celsius">Celcius</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Kelvin">Kelvin</option>
+                    </select>
+                    <input id="inputTemperature" type="number" placeholder="Input"
+                        class="shadow-sm w-36 h-9 border-none rounded-md p-1">
+                </div>
+                <div
+                    class="output-field flex justify-around justify-items-center w-[100%] my-1 mx-auto relative py-3 border-b-2">
+                    <div class="text-xl leading-10 min-w-[60px]">
+                        <label for="toUnit">To:</label>
+                    </div>
+                    <select name="units" id="toUnit"
+                        class="text-black float-right h-9 min-w-[100px] text-center rounded-md font-bold shadow-sm">
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Celsius">Celcius</option>
+                        <option value="Kelvin">Kelvin</option>
+                    </select>
+                    <input readonly id="outputTemperature" type="number" placeholder="Output"
+                        class="text-black shadow-sm w-36 h-9 border-none rounded-md p-1">
+                </div>
+                <div class="buttons m-2 p-2 flex justify-around">
+                    <button onclick="ResetTemperatureCalculator()"
+                        class="min-w-[100px] m-1 py-2 px-4 rounded-md text-xl font-bold text-sky-600 bg-white shadow-sm hover:bg-slate-200">Reset</button>
+                    <button onclick="CalculateTemperature()"
+                        class="min-w-[100px] m-1 py-2 px-4 rounded-md text-xl font-bold text-sky-600 bg-white shadow-sm hover:bg-slate-200">Calculate</button>
+                </div>
+            </div>
+            <div class="info-box w-[50%] p-2 m-1 bg-sky-500 rounded-xl shadow-md">
+                <div id="OutputInfo" class="flex w-full h-full flex-col justify-center items-center">
+                    <h2 class="text-center mb-2 text-3xl">Basic Information</h2>
+                    <ul class="list-disc m-1 ml-6 text-sm">
+                        <li>Enter the temperature value in the <b><i>From Input</i></b> field you want to convert.</li>
+                        <li>Select your given temperature's unit from the <b>From Select Box</b>.</li>
+                        <li>Select your desired temperature's unit from the <b>To Select Box</b>.</li>
+                        <li>The Converted value will show in the <b><i>To Input Box</i></b>.</li>
+                    </ul>
+                </div>
+
+                <div id="OutputResult" class="w-full h-full flex-col justify-center items-center">
+                    <h2 class="text-center mb-2 text-3xl">Result</h2>
+                    <p class="text-left mt-2 text-xl self-start" id="temperatureResult"></p>
+                    <p class="text-left mt-2 text-xl self-start"><b>Formula:</b> <span id="temperatureFormula"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./data/formula.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
