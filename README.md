@@ -1,2 +1,2 @@
 # OIBSIP
-## Oaisis InfoByte Level 1 all tasks
+## Oasis InfoByte Web Development Level 1 all tasks
